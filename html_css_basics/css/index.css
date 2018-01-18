@@ -1,0 +1,103 @@
+body {
+  background-color: whitesmoke;
+}
+
+/* How do you select a link that's been visited? */
+
+/*
+  CSS selectors beginning with `:` are called pseudo-selectors
+  and are usually triggered based on the state of an element.
+*/
+
+a:visited {
+  /* display: initial; */
+}
+
+/* How do you select a div with mouse cursor on top? */
+
+div:hover {
+  /* display: initial; */
+}
+
+/* How do you select an element with the attribute data-content? */
+
+[data-content] {
+  /* display: initial; */
+}
+/* *[data-content] */
+
+/* How do you select all children of ul, but the last? */
+
+/*
+  The `not` pseudo-selector can be used to skip elements that
+  matches a certain query. (e.g. *:not(.yo), div:not(#pete))
+*/
+
+ul > *:not(:last-child) {
+  /* display: initial; */
+}
+
+/* SPECIFICITY */
+
+/*
+  The following CSS rules are competing over which
+  applies its background-color property following
+  the specificity algorithm.
+*/
+/* 1 tag */
+a {
+  /* background-color: green !important; */
+}
+
+/* 1 class, 1 tag <- WINS over previous one */
+a[href] {
+  /* background-color: aquamarine; */
+}
+
+/* 1 id, 0 classes, 0 tags <- WINS! */
+#board-link {
+  /* background-color: purple; */
+}
+
+html {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+* {
+  font-family: inherit;
+}
+
+.board-link-list {
+  padding: 0;
+  list-style: none;
+}
+
+.board-link-list > li {
+  background-color: mediumpurple;
+  border-radius: 5px;
+  color: white;
+  height: 75px;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  padding: 7.5px;
+  /* padding & margin both control whitespace around an element,
+     but padding is included in the content of the element. Margin
+     doesn't count as content. For example, background-color will
+     appear in the white space added by padding, but not in
+     the white space added by margin.
+  */
+
+  margin-bottom: 15px;
+  /* margin: 20px 15px 10px 5px; */
+  /* margin: top | right | bottom | left */
+  /* You can also do this with padding. */
+}
+
+
+
+
+
+/* */

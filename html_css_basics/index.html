@@ -13,6 +13,16 @@
   -->
   <head>
     <title>HTML & CSS: Basics Demo</title>
+    <link rel="stylesheet" href="css/index.css"/>
+    <!--
+      The `style` can be used to write CSS directly
+      inside the document.
+    -->
+    <style>
+      a {
+        color: maroon;
+      }
+    </style>
   </head>
   <!--
     The body is used to hold all tags to show content
@@ -26,7 +36,7 @@
       Typically, a bunch of links.
     -->
     <nav>
-      <a href="">Boards</a>
+      <a id="board-link" href="">Boards</a>
       <a href="">Profile</a>
 
       <form id="search-field">
@@ -55,7 +65,9 @@
         -->
         <ul class="board-link-list">
           <li>Management</li>
-          <li>
+          <li
+            style="background-image: url(https://i.imgur.com/gqBG7EK.jpg);"
+          >
             <!--
               To put the `img` underneath the text, we had to
               the text in the `div` tag which makes that text
@@ -63,8 +75,7 @@
               of its parent element.
               That pushes the `img` below.
             -->
-            <div>Learning to Hack</div>
-            <img width="200px" src="https://i.imgur.com/gqBG7EK.jpg" />
+            Learning to Hack
           </li>
         </ul>
       </section>
@@ -73,13 +84,15 @@
         <h1>Personal Boards</h1>
         <ul class="board-link-list">
           <li>Management</li>
-          <li>
-            <div>Learning to Hack</div>
-            <img width="200px" src="https://i.imgur.com/gqBG7EK.jpg" />
+          <li
+            style="background-image: url(https://i.imgur.com/gqBG7EK.jpg);"
+          >
+            Learning to Hack
           </li>
-          <li>
-            <div>My ideas</div>
-            <img width="200px" src="https://i.imgur.com/yPklTT8.jpg" />
+          <li
+            style="background-image: url(https://i.imgur.com/yPklTT8.jpg);"
+          >
+            My ideas
           </li>
           <li>Create New Board...</li>
         </ul>
