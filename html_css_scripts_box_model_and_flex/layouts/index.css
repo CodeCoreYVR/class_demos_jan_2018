@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+
+}
+/*
+  div {
+    height: 40px;
+    padding: 10px;
+    border-width: 5px;
+    margin: 15px;
+  }
+
+  `box-sizing` controls how the border and padding a treated
+  in the height and width of an element.
+
+  `content-box` means that height does not include padding and
+  border the final calculation of the elements height.
+
+  `border-box` means that the height includes padding and border
+  in the final calculation which means that there will less space
+  for actual content like text.
+
+  `content-box`:
+  actual height = (40px + 2 * 10px + 2 * 5px) + 15px * 2 = 100px
+  height of content = 40px
+
+  `border-box`:
+  actual height = (40px) + 15px * 2 = 70px
+  height of content = (40px - 10px * 2 - 5px * 2) = 10px
+*/
+
+body {
+  margin: 0;
+}
+
+main div {
+  background-color: grey;
+  border-radius: 5px;
+  min-height: 100px;
+}

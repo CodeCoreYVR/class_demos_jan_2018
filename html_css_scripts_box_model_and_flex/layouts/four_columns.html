@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Four Columns</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+      main {
+        display: flex;
+        padding: 20px;
+        height: 100vh;
+        /* vh (viewport height): 1vh === 1% of window height */
+      }
+
+      main div {
+        flex-grow: 1;
+        height: 100%;
+      }
+
+      main > div:not(:last-child) {
+        margin-right: 20px;
+        /* margin: vertical (top/bottom) | horizontal (left/right) */
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </main>
+  </body>
+</html>
