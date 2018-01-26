@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap Demo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+      <a class="navbar-brand" href="#">CodeCore</a>
+
+      <!--
+        The following is used to open collapsed elements.
+        To get that behaviour add the html attribute, `data-toggle="collapse"`.
+        Then, specify with a CSS query which element should be un-collapsed
+        when the button click as a value of the `data-target` html attribute.
+        (i.e. `data-target=".collapse.navbar-collapse"`)
+      -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapse.navbar-collapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="#">Features</a>
+          <a class="nav-item nav-link" href="#">Pricing</a>
+          <a class="nav-item nav-link disabled" href="#">Disabled</a>
+        </div>
+
+        <form class="form-inline ml-auto">
+          <input class="form-control mr-2" type="search" placeholder="Search">
+          <button class="btn btn-outline-light" type="submit">Search</button>
+        </form>
+      </div>
+
+    </nav>
+
+
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-4">Hello, World!</h1>
+        <p class="lead">
+          This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
+        </p>
+        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#learnMore" >
+          Learn More >>
+        </button>
+      </div>
+    </div>
+
+    <div class="modal fade" id="learnMore" tabindex="-1">
+      <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h5 class="modal-title">
+              You are learning more!
+            </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <p>Hello, there!</p>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">
+              Save changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+
+          <!--
+            You can nest grids within grids. To do this, you must add
+            a child <div class="row"> within the <div class="col-*"> that
+            you want to sub-divide.
+          -->
+          <div class="row">
+            <div class="col-6">
+              <p>
+                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+              </p>
+            </div>
+            <div class="col-3">
+              <p>
+                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+              </p>
+            </div>
+            <div class="col-3">
+              <p>
+                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <h2>Heading</h2>
+          <p>
+            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+          </p>
+          <button type="button" class="btn btn-secondary">
+            View details >>
+          </button>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <h2>Heading</h2>
+          <p>
+            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+          </p>
+          <button type="button" class="btn btn-secondary">
+            View details >>
+          </button>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <h2>Heading</h2>
+          <p>
+            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+          </p>
+          <button type="button" class="btn btn-secondary">
+            View details >>
+          </button>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <h2>Heading</h2>
+          <p>
+            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+          </p>
+          <button type="button" class="btn btn-secondary">
+            View details >>
+          </button>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <h2>Heading</h2>
+          <p>
+            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+          </p>
+          <button type="button" class="btn btn-secondary">
+            View details >>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

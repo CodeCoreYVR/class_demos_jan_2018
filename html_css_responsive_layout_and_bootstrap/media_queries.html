@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Media Queries</title>
+    <style>
+      /* RESETS */
+      html {
+        font-family: sans-serif;
+      }
+
+      * {
+        font-family: inherit;
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        color: white;
+        background-color: black;
+      }
+
+      nav > *:not(.brand) {
+        display: none;
+      }
+
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 5px;
+      }
+
+      main > div:first-child {
+        height: calc(150px * 2);
+      }
+
+      main > div {
+        height: 150px;
+        width: 100%;
+        margin: 5px;
+        background-color: salmon;
+      }
+
+      @media only screen and (min-width: 576px) {
+        main > div:first-child {
+          width: 100%;
+        }
+
+        main > div {
+          background-color: deepskyblue;
+          /* To get a perfectly fitting half of the screen,
+             you must account for any margin there might be
+             even if your element is using border-box. Just
+             substract margin dimensions from the total width using
+             calc. */
+          width: calc(50% - 2 * 5px);
+        }
+      }
+
+      @media only screen and (min-width: 768px) {
+        nav > *:not(.brand) {
+          /* reset display of nav elements to initial value.
+             it'll make them reappear. */
+          display: initial;
+        }
+
+        main > div:first-child {
+          width: calc(100% * 2/3 - 2 * 5px);
+        }
+
+        main > div:nth-child(2) {
+          height: calc(150px * 2);
+        }
+
+        main > div {
+          background-color: goldenrod;
+          width: calc(100% / 3 - 2 * 5px);
+        }
+      }
+
+      /* LAYOUT */
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h2 class="brand">🥓</h2>
+      <h2>Home</h2>
+      <h2>About</h2>
+    </nav>
+
+    <main>
+      <div></div> <div></div> <div></div> <div></div>
+      <div></div> <div></div> <div></div> <div></div>
+      <div></div> <div></div> <div></div> <div></div>
+      <div></div> <div></div> <div></div> <div></div>
+      <div></div> <div></div> <div></div> <div></div>
+    </main>
+  </body>
+</html>
