@@ -6,6 +6,7 @@ require('colors'); // Adds methods to the String prototype
 // that generates an instance of an express app.
 // This object will be used build a web server.
 const app = express();
+app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 // app.use is similar to app.get, but it works for all
@@ -45,7 +46,14 @@ app.get('/home', (request, response) => {
   // The `response` argument is an object that will hold the servers
   // reply to the client. It will contain an HTTP header and, possibly,
   // a body which would hold data such an HTML page.
-  response.send('Welcome home, Bob!!!');
+  // response.send('Welcome home, Bob!!!');
+
+  // Use response.render to send a template as the body of a response.
+  // response.render will, by default, look for templates inside of
+  // the /views directory. As its first argument, you must provide
+  // a string that is a path to the template beginning from the
+  // /views directory.
+  response.render('home');
 });
 
 const DOMAIN = 'localhost';
