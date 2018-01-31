@@ -12,5 +12,8 @@
     "webapp"
   ],
   "author": "Steve Godin",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.1.2"
+  }
 }
