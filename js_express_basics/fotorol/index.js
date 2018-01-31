@@ -1,4 +1,5 @@
 const express = require('express');
+const logger = require('morgan');
 require('colors'); // Adds methods to the String prototype
 
 // When we require 'expres', we get a function
@@ -6,14 +7,15 @@ require('colors'); // Adds methods to the String prototype
 // This object will be used build a web server.
 const app = express();
 
-
+app.use(logger('dev'));
 // app.use is similar to app.get, but it works for all
 // HTTP verbs (e.g. POST, GET, UPDATE, DELETE, etc)
 
-// When a path is not specified for app.use (or app.get),
+// When a path is not specified for app.use,
 // the route will match for all paths.
 // In other words, the middleware function will run regardless
 // of the URL the client asked for.
+/*
 app.use((request, response, next) => {
   console.log(
     `${request.method.bold.blue} – ${request.path.underline} –  ${new Date().toString()}`
@@ -25,7 +27,7 @@ app.use((request, response, next) => {
   // until it timeouts.
   next();
 });
-
+*/
 // URL http://www.example.com/home/index
 //          | Domain        | Path     |
 
