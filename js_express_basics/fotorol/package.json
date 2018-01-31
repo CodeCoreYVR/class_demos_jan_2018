@@ -1,0 +1,16 @@
+{
+  "name": "fotorol",
+  "version": "0.0.1",
+  "description": "Clone of Exchange-a-Gram",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "instagram",
+    "photos",
+    "webapp"
+  ],
+  "author": "Steve Godin",
+  "license": "MIT"
+}
