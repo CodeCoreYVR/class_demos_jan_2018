@@ -1,9 +1,30 @@
 const express = require('express');
+require('colors'); // Adds methods to the String prototype
 
 // When we require 'expres', we get a function
 // that generates an instance of an express app.
 // This object will be used build a web server.
 const app = express();
+
+
+// app.use is similar to app.get, but it works for all
+// HTTP verbs (e.g. POST, GET, UPDATE, DELETE, etc)
+
+// When a path is not specified for app.use (or app.get),
+// the route will match for all paths.
+// In other words, the middleware function will run regardless
+// of the URL the client asked for.
+app.use((request, response, next) => {
+  console.log(
+    `${request.method.bold.blue} – ${request.path.underline} –  ${new Date().toString()}`
+  );
+  // `next` (3rd argument in a middleware function) is a function
+  // that tells Express to move on to the next middleware function
+  // in line when it is called. If you forget to call `next`, the
+  // will never get a response back which means it will keep waiting
+  // until it timeouts.
+  next();
+});
 
 // URL http://www.example.com/home/index
 //          | Domain        | Path     |
