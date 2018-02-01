@@ -71,6 +71,18 @@ app.use((req, res, next) => {
 // URL http://www.example.com/home/index
 //          | Domain        | Path     |
 const home = (request, response) => {
+  const listObj = [
+    {
+      name: 'Bob',
+      home: 'Kentucky'
+    },
+    {
+      name: 'Jon Snow',
+      home: 'Winterfell'
+    }
+  ]
+  response.cookie('things', [1,2,3,5,6,7]);
+  response.cookie('listObj', listObj);
   // The `request` argument is an object that contains information
   // from the client. It's composed of an HTTP header and, possibly,
   // a body that holds data. It represents what a client asks of
@@ -99,6 +111,14 @@ app.get('/home', home);
 
 // HTTP VERB: GET, PATH: /contact_us
 app.get('/contact_us', (request, response) => {
+  // To update a cookie:
+  // - First get it from the request.
+  // - Change it using any function you like.
+  // - Set it again on the response
+  const listObj = request.cookies.listObj;
+  listObj.push({name: 'Daenerys', home: 'Mereen'});
+  response.cookie('listObj', listObj)
+
   // To get form data from a form using the GET method, use
   // request.query. All the form data will be available as a
   // JavaScript object where each property corresponds
