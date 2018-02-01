@@ -1,21 +1,16 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Fotorol</title>
-  </head>
-  <body>
-    <h2>Thank you, <%= fullName %></h2>
+<%- include('./partials/header') %>
 
-    <p>Your message was:</p>
-    <p><%= message %></p>
+  <h2>Thank you, <%= fullName %></h2>
 
-    <ul>
-      <% for (let number of numbers) { %>
-        <% if (number % 2 !== 0) { %>
-          <li>Numbers: <%= number %></li>
-        <% } %>
+  <p>Your message was:</p>
+  <p><%= message %></p>
+
+  <ul>
+    <% for (let number of numbers) { %>
+      <% if (number % 2 !== 0) { %>
+        <li>Numbers: <%= number %></li>
       <% } %>
-    </ul>
-  </body>
-</html>
+    <% } %>
+  </ul>
+
+<%- include('./partials/footer') %>
