@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 require('colors'); // Adds methods to the String prototype
 
 
@@ -21,6 +22,9 @@ app.use(logger('dev'));
 // gives the full beginning the root of the computer to
 // the file using __dirname.
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(cookieParser());
+
 // app.use is similar to app.get, but it works for all
 // HTTP verbs (e.g. POST, GET, UPDATE, DELETE, etc)
 
@@ -45,9 +49,27 @@ app.use((request, response, next) => {
   next();
 });
 */
+
+app.use((req, res, next) => {
+  const username = req.cookies.username;
+  // To read cookies, use the property `cookies` of
+  // the request object. Cookies are read from the request
+  // instead of the response, because the browser
+  // sends its cookies the request's headers.
+  console.log(req.cookies);
+
+  res.locals.username = null;
+  if (username) {
+    // All properties of the 'locals' property of the response
+    // object are available as variables in all forms. Use it
+    // to set global variables.
+    res.locals.username = username;
+  }
+  next();
+});
+
 // URL http://www.example.com/home/index
 //          | Domain        | Path     |
-
 const home = (request, response) => {
   // The `request` argument is an object that contains information
   // from the client. It's composed of an HTTP header and, possibly,
@@ -106,6 +128,37 @@ app.post('/contact_us', (request, response) => {
     'thank_you',
     {fullName: fullName, message: message, numbers: numbers}
   );
+});
+
+// HTTP VERB: GET, PATH: /sign_in
+app.get('/sign_in', (req, res) => {
+  res.render('sign_in');
+});
+
+const COOKIE_MAX_AGE = 1000 * 60 * 60 * 24 * 7;
+// HTTP VERB: POST, PATH: /sign_in
+app.post('/sign_in', (req, res) => {
+  const username = req.body.username;
+
+  if (username) {
+    // To create a cookie, use the method `cookie` from the response
+    // object. This method takes two required arguments: a name for
+    // the cookie and a value. It takes an option third argument
+    // which is object to configure the cookie. Here we use
+    // it to set an expiration time on the cookie.
+    res.cookie('username', username, {maxAge: COOKIE_MAX_AGE});
+
+    // When using this method, cookieParser will create a header
+    // in the response to set the cookie which might look like this:
+    // Set-Cookie:username=jonsnow; Max-Age=604800; Path=/; Expires=Thu,08 Feb 2018 18:55:50 GMT
+  }
+
+  res.redirect('/');
+});
+// HTTP VERB: POST, PATH: /sign_out
+app.post('/sign_out', (req, res) => {
+  res.clearCookie('username');
+  res.redirect('/');
 });
 
 const DOMAIN = 'localhost';

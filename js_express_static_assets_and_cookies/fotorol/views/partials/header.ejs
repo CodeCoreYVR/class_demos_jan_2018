@@ -22,8 +22,26 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="contact_us">Contact Us</a>
+            <a class="nav-link" href="/contact_us">Contact Us</a>
           </li>
+
+          <% if (!username) { %>
+            <li class="nav-item">
+              <a class="nav-link" href="/sign_in">Sign In</a>
+            </li>
+          <% } else { %>
+            <li class="nav-item">
+              <form class="form-inline" action="/sign_out" method="POST">
+                <input type="submit" class="btn btn-light" value="Sign out" />
+              </form>
+            </li>
+          <% } %>
+
         </ul>
+        <% if (username) { %>
+          <span class="navbar-text ml-auto"><%= username %></span>
+        <% } %>
       </div>
     </nav>
+
+    <div class="container">

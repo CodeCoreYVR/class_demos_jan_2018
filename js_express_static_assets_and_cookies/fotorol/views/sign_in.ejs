@@ -1,0 +1,13 @@
+<%- include('./partials/header') %>
+  <h1>Sign In</h1>
+
+  <form action="/sign_in" method="POST">
+    <div class="form-group">
+      <label for="username">Username</label> <br />
+      <input class="form-control" type="text" name="username" id="username" />
+    </div>
+
+    <input class="btn btn-primary" type="submit" value="Submit">
+  </form>
+
+<% include('./partials/footer') %>
