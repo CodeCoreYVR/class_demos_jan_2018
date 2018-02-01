@@ -1,7 +1,11 @@
+const path = require('path');
 const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 require('colors'); // Adds methods to the String prototype
+
+
+console.log(__dirname);
 
 // When we require 'expres', we get a function
 // that generates an instance of an express app.
@@ -10,6 +14,13 @@ const app = express();
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
+// Use path.join to combine strings into directory paths.
+// Example: path.join('fotorol', 'public') -> 'fotorol/public'
+
+// __dirname is a global variable available only in Node. It
+// gives the full beginning the root of the computer to
+// the file using __dirname.
+app.use(express.static(path.join(__dirname, 'public')));
 // app.use is similar to app.get, but it works for all
 // HTTP verbs (e.g. POST, GET, UPDATE, DELETE, etc)
 
