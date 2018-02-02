@@ -181,6 +181,15 @@ app.post('/sign_out', (req, res) => {
   res.redirect('/');
 });
 
+// SETUP POSTS ROUTER
+const posts = require('./routes/posts');
+// You can prepend a path to all routes from a router
+// by providing a first argument to app.use.
+// The first arg. will be added in front of all paths
+// from posts.
+app.use('/posts', posts);
+
+
 const DOMAIN = 'localhost';
 const PORT = 3002;
 // Use the app.listen to start a server. Until listen is called, the
