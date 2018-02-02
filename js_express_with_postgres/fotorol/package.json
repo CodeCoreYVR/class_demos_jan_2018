@@ -1,0 +1,29 @@
+{
+  "name": "fotorol",
+  "version": "0.0.1",
+  "description": "Clone of Exchange-a-Gram",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "say": "echo 'Hello from fotorol server!'"
+  },
+  "keywords": [
+    "instagram",
+    "photos",
+    "webapp"
+  ],
+  "author": "Steve Godin",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "colors": "^1.1.2",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.11"
+  }
+}

@@ -1,0 +1,16 @@
+<%- include('./partials/header') %>
+
+  <h2>Thank you, <%= fullName %></h2>
+
+  <p>Your message was:</p>
+  <p><%= message %></p>
+
+  <ul>
+    <% for (let number of numbers) { %>
+      <% if (number % 2 !== 0) { %>
+        <li>Numbers: <%= number %></li>
+      <% } %>
+    <% } %>
+  </ul>
+
+<%- include('./partials/footer') %>

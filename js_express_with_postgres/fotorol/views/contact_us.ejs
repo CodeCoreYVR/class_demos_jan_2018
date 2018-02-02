@@ -1,0 +1,30 @@
+<%- include('./partials/header') %>
+  <h1>Contact Us</h1>
+
+  <!--
+  http://localhost:3002/contact_us?fullName=Steve+Godin&message=+Hello%21
+  -->
+  <!--
+    A form's default method is the HTTP verb 'GET'.
+  -->
+  <form method="POST">
+    <div>
+      <label for="fullName">Full Name</label> <br />
+      <input type="text" name="fullName" id="fullName" />
+    </div>
+
+    <div>
+      <label for="message">Message</label> <br />
+      <textarea
+        name="message"
+        id="message"
+        cols="80"
+        rows="8"
+      > </textarea>
+    </div>
+
+    <div>
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+<% include('./partials/footer') %>
