@@ -211,6 +211,52 @@ document.addEventListener('keydown', event => {
 });
 
 
+// EVENT PROPAGATION
+
+
+function propagationLogger (event) {
+  const { currentTarget, eventPhase } = event;
+  const { id, tagName, className } = currentTarget;
+  // The event object has a property, eventPhase,
+  // that holds an integer which correspond to an event phase
+  // as follows:
+  // CAPTURING_PHASE : 1
+  // AT_TARGET : 2
+  // BUBBLING_PHASE : 3
+  const phases = {
+    '1': 'Capturing',
+    '2': 'At Target',
+    '3': 'Bubbling'
+  }
+  if (
+    currentTarget.matches('.team.salmon')
+    && eventPhase === 3
+  ) {
+    // Use event.stopPropagation() to
+    // prevent an event from continuing to
+    // capture or bubble through the DOM.
+    // The event stop at the currentTarget where
+    // stopPropagation was called.
+    event.stopPropagation();
+  }
+  console.log(
+    `${tagName}#${id}.${className}`,
+    `Event Phase: ${phases[eventPhase]}`
+  );
+}
+
+document.querySelectorAll('*').forEach(node => {
+  // By default, event listener trigger only
+  // on the bubbling phase.
+  node.addEventListener('click', propagationLogger);
+  // <node>.addEventListener can optionally take a
+  // third argument, a boolean, to trigger the listener on
+  // the capturing instead of the bubbling phase.
+  // Set it to `true` to do so.
+  node.addEventListener('click', propagationLogger, true);
+});
+
+
 
 
 
