@@ -83,6 +83,8 @@ html * {
   flex-flow: column;
   justify-content: flex-end;
   align-items: center;
+
+  transition: 0.25s transform, 0.5s filter;
 }
 
 .doggo > h1 {
@@ -139,3 +141,20 @@ html * {
   width: 5rem;
   flex-shrink: 0;
 }
+
+.invert {
+  filter: invert();
+}
+
+.tilt {
+  transform: rotate(20deg);
+}
+
+.monochrome {
+  filter: grayscale();
+}
+
+
+
+
+/* bump */
