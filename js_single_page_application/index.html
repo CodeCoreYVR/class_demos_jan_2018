@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Awesome Answers SPA</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <nav>
+      <a
+        href="/questions"
+        data-target="question-index"
+      >
+        Questions
+      </a>
+      |
+      <a
+        href="/questions/new"
+        data-target="question-new"
+      >
+        New Question
+      </a>
+    </nav>
+    <div class="page" id="question-show"> </div>
+    <div class="page" id="question-index"> </div>
+    <div class="page" id="question-new">
+      <h1>New Question</h1>
+      <form id="question-new-form">
+       <div>
+         <label for="title">Title</label> <br/>
+         <input name="title" id="title" />
+       </div>
+       <div>
+         <label for="body">Body</label> <br />
+         <textarea
+          cols="30" rows="4"
+          name="body" id="body"
+         > </textarea>
+       </div>
+       <input type="submit" value="Submit" />
+     </form>
+    </div>
+  </body>
+</html>
